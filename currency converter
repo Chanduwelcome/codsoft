@@ -1,0 +1,66 @@
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+import javax.swing.event.*;
+private void initComponents() {
+
+        title = new javax.swing.JLabel();
+        convert = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        convertFrom = new javax.swing.JLabel();
+        convertTo = new javax.swing.JLabel();
+        input = new javax.swing.JTextField();
+        choiceFrom = new javax.swing.JComboBox();
+        choiceTo = new javax.swing.JComboBox();
+        output = new javax.swing.JLabel();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(0, 0, 0));
+
+        title.setFont(new java.awt.Font("Times New Roman", 1, 48)); // NOI18N
+        title.setText("Techvidvan - Currency Converter");
+        title.setVerifyInputWhenFocusTarget(false);
+
+        convert.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        convert.setText("CONVERT");
+        convert.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                convertActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel1.setText("Enter Amount ");
+
+        convertFrom.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        convertFrom.setText("Convert From");
+
+        convertTo.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        convertTo.setText("Convert To");
+
+        input.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        input.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inputActionPerformed(evt);
+            }
+        });
+
+        choiceFrom.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        choiceFrom.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "INR", "USD", "EUR", "CAD", "JPY", "CNY", "BTC" }));
+        choiceFrom.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                choiceFromItemStateChanged(evt);
+            }
+        });
+
+        choiceTo.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        choiceTo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "INR", "USD", "EUR", "CAD", "JPY", "CNY", "BTC" }));
+        choiceTo.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                choiceToItemStateChanged(evt);
+            }
+        });
+
+        output.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        output.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        output.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
